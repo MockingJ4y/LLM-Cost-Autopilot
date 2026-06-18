@@ -1,0 +1,7 @@
+# Environments
+venv/
+.env
+
+# Database
+data/autopilot.db
+__pycache__/
