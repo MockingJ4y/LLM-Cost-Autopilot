@@ -30,7 +30,15 @@ During a simulated traffic test, the Autopilot system successfully distributed p
 
 100% Quality Parity: Achieved a perfect 5.0/5.0 average quality score from the asynchronous evaluation worker.
 
-(Tip: Insert your dashboard screenshot here! e.g., ![Dashboard Snapshot](assets/dashboard.png))
+(Tip: Insert your dashboard screenshot here.)
+
+## Screenshot
+
+![LLM Cost Autopilot Analytics](images/dashboard.png)
+
+If you prefer a fixed display size, use HTML:
+
+<img src="images/dashboard.png" alt="LLM Cost Autopilot Analytics" width="1000"/>
 
 🏗️ Tech Stack
 
