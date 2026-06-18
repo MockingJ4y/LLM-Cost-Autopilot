@@ -30,7 +30,6 @@ During a simulated traffic test, the Autopilot system successfully distributed p
 
 100% Quality Parity: Achieved a perfect 5.0/5.0 average quality score from the asynchronous evaluation worker.
 
-(Tip: Insert your dashboard screenshot here.)
 
 ## Screenshot
 
