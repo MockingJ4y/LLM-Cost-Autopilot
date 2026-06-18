@@ -53,7 +53,7 @@ Providers Used: Groq, Mistral AI, OpenAI
 
 1. Clone the repository
 
-git clone [https://github.com/yourusername/llm-cost-autopilot.git](https://github.com/yourusername/llm-cost-autopilot.git)
+git clone [https://github.com/MockingJ4y/llm-cost-autopilot.git](https://github.com/MockingJ4y/llm-cost-autopilot.git)
 cd llm-cost-autopilot
 
 
