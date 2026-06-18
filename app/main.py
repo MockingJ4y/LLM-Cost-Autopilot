@@ -4,19 +4,18 @@ from dotenv import load_dotenv
 
 from app.router import ComplexityClassifier, send_unified_request
 from app.config import TIER_ROUTING, MODEL_REGISTRY
-from app.database import init_db, log_request
+# Make sure get_all_logs is imported here!
+from app.database import init_db, log_request, get_all_logs
 from app.worker import queue_async_evaluation
 
 load_dotenv()
 app = FastAPI(title="LLM Cost Autopilot")
 classifier = ComplexityClassifier()
 
-# THIS is the function that was likely missing or misaligned!
 @app.on_event("startup")
 def startup_event():
     init_db()
 
-# The class must be totally separate from the @app.on_event decorator
 class CompletionRequest(BaseModel):
     prompt: str
 
@@ -56,7 +55,7 @@ async def route_completion(request: CompletionRequest, background_tasks: Backgro
         "data": response_data
     }
 
-# --- Management Endpoints (Phase 5) ---
+# --- Management Endpoints ---
 
 @app.get("/v1/models")
 async def get_models():
@@ -67,3 +66,9 @@ async def get_models():
 async def get_routing_config():
     """Show current tier-to-model mapping."""
     return {"active_routing": TIER_ROUTING}
+
+# ---> NEW ENDPOINT FOR THE DASHBOARD <---
+@app.get("/v1/logs")
+async def fetch_logs():
+    """Expose the SQLite database to the Streamlit frontend."""
+    return {"logs": get_all_logs()}
