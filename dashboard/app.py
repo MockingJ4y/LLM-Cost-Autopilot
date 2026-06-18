@@ -4,7 +4,7 @@ import sqlite3
 import requests
 
 DB_PATH = "data/autopilot.db"
-API_URL = "http://localhost:8000/v1/completions"
+API_URL = "https://llm-cost-autopilot-xzlf.onrender.com"
 
 st.set_page_config(page_title="Autopilot Dashboard", layout="wide")
 st.title("🚀 LLM Cost Autopilot Analytics")
